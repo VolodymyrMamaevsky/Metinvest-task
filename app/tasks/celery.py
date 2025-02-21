@@ -6,7 +6,7 @@ from app.models.database import SessionLocal, Order
 from app.core.config import logger
 import time
 
-app = Celery("tasks", broker=os.getenv("REDIS_URL", "redis://localhost:6379"))
+app = Celery("tasks", broker=os.getenv("REDIS_URL"))
 
 logger = logging.getLogger(__name__)
 
