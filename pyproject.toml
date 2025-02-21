@@ -1,0 +1,25 @@
+[project]
+name = "metinvest-task"
+version = "0.1.0"
+description = "test task for metinvest"
+authors = [
+    {name = "Mamaevsky",email = "vova.moder@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi (>=0.115.8,<0.116.0)",
+    "uvicorn (>=0.34.0,<0.35.0)",
+    "sqlalchemy (>=2.0.38,<3.0.0)",
+    "pydantic (>=2.10.6,<3.0.0)",
+    "redis (>=5.2.1,<6.0.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.group.dev.dependencies]
+black = "^25.1.0"
+
