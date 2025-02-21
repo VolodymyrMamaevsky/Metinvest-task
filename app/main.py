@@ -2,7 +2,6 @@ from fastapi import FastAPI
 from app.api import endpoints
 from app.models.database import create_db
 from app.core.config import logger
-import os
 
 app = FastAPI()
 
