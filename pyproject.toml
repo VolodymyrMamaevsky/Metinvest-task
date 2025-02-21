@@ -3,16 +3,24 @@ name = "metinvest-task"
 version = "0.1.0"
 description = "test task for metinvest"
 authors = [
-    {name = "Mamaevsky",email = "vova.moder@gmail.com"}
+    { name = "Mamaevsky", email = "vova.moder@gmail.com" }
 ]
 readme = "README.md"
-requires-python = ">=3.12"
+requires-python = ">=3.12,<4.0"
 dependencies = [
     "fastapi (>=0.115.8,<0.116.0)",
     "uvicorn (>=0.34.0,<0.35.0)",
     "sqlalchemy (>=2.0.38,<3.0.0)",
     "pydantic (>=2.10.6,<3.0.0)",
-    "redis (>=5.2.1,<6.0.0)"
+    "redis (>=5.2.1,<6.0.0)",
+    "celery (>=5.4.0,<6.0.0)",
+    "faker (>=36.1.1,<37.0.0)",
+    "python-dotenv (>=1.0.1,<2.0.0)",
+    "pytest (>=8.3.4,<9.0.0)",
+    "pytest-asyncio (>=0.25.3,<0.26.0)",
+    "requests (>=2.32.3,<3.0.0)",
+    "loguru (>=0.7.3,<0.8.0)",
+    "httpx (>=0.28.1,<0.29.0)"
 ]
 
 
@@ -22,4 +30,5 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.group.dev.dependencies]
 black = "^25.1.0"
+pytest-cov = "^6.0.0"
 
