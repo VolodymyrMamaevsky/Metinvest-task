@@ -20,6 +20,7 @@ Redis.
 ### **1. Install Dependencies**
 
 Swagger UI will be available at: http://localhost:8000/docs
+Command execution examples in this guide for Windows
 
 To install all project dependencies, use Poetry (if Poetry is not installed, guide below):
 
@@ -27,7 +28,7 @@ To install all project dependencies, use Poetry (if Poetry is not installed, gui
 https://python-poetry.org/docs/
 ```
 
-Create and activate virtual environment (below example for Windows):
+Create and activate virtual environment:
 
 ```bash
 python -m venv .venv
@@ -74,8 +75,6 @@ This will create all necessary containers:
 - **FastAPI** - Your main application.
 - **Redis** - Message broker for Celery.
 - **Celery** - Handles asynchronous tasks.
-
-The FastAPI container will be available on **port 8000**.
 
 ---
 
@@ -263,8 +262,8 @@ Logging can be configured in `config.py` using **Loguru**.
 This project implements a system for processing and analyzing inventory data in a warehouse using **FastAPI, Celery, and
 Redis**.
 
-✔ **All data is automatically generated and stored in a SQLite database.**  
-✔ **You can interact with the system via a REST API.**  
-✔ **Celery handles asynchronous task processing efficiently.**  
+ **All data is automatically generated and stored in a SQLite database.**  
+ **You can interact with the system via a REST API.**  
+ **Celery handles asynchronous task processing efficiently.**  
 
 
