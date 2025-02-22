@@ -1,11 +1,17 @@
+import os
+from datetime import datetime
+
+from dotenv import load_dotenv
 from sqlalchemy import create_engine, Integer, Float, DateTime, Index
 from sqlalchemy.orm import sessionmaker, Mapped, mapped_column, DeclarativeBase
-from datetime import datetime
-import os
+from sqlalchemy import text
 
+load_dotenv()
 DATABASE_URL = os.getenv("DATABASE_URL")
 
-Base = DeclarativeBase()
+
+class Base(DeclarativeBase):
+    pass
 
 
 class Order(Base):
@@ -30,7 +36,7 @@ class Order(Base):
 def get_engine():
     engine = create_engine(DATABASE_URL, connect_args={"check_same_thread": False})
     with engine.connect() as conn:
-        conn.execute("PRAGMA journal_mode=WAL;")
+        conn.execute(text("PRAGMA journal_mode=WAL;"))
     return engine
 
 

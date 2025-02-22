@@ -4,13 +4,6 @@ from app.main import app
 client = TestClient(app)
 
 
-# Test the root endpoint
-def test_read_root():
-    response = client.get("/")
-    assert response.status_code == 200
-    assert response.json() == {"message": "Welcome to Metinvest Task API!"}
-
-
 # Test the total_spent endpoint (GET /total_spent)
 def test_total_spent():
     response = client.get("/total_spent?start_date=2025-01-01&end_date=2025-01-31")

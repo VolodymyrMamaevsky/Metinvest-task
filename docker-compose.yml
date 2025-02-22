@@ -14,7 +14,6 @@ services:
       - .:/app  # Mount the local directory to the container to allow code changes
     depends_on:
       - redis
-      - celery
 
   # Redis service for Celery to use as a broker
   redis:

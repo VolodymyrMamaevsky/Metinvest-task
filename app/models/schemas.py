@@ -1,4 +1,4 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, ConfigDict
 from datetime import datetime
 
 
@@ -11,7 +11,7 @@ class OrderCreate(BaseModel):
     order_date: datetime
 
 
-# Schema for the response containing order data
+# Schema for retrieving an order response
 class OrderResponse(BaseModel):
     orderid: int
     supplier_id: int
@@ -20,5 +20,21 @@ class OrderResponse(BaseModel):
     price: float
     order_date: datetime
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
+
+
+# Schema for total spent response
+class TotalSpentResponse(BaseModel):
+    total_spent: float
+
+
+# Schema for top products response
+class TopProductResponse(BaseModel):
+    product_id: int
+    total_sold: int
+
+
+# Schema for top suppliers response
+class TopSupplierResponse(BaseModel):
+    supplier_id: int
+    total_orders: int

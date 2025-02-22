@@ -2,6 +2,7 @@ from sqlalchemy.orm import Session
 from sqlalchemy import func
 from app.models.database import Order
 from datetime import datetime
+from app.models.schemas import OrderCreate
 
 
 def get_total_spent(db: Session, start_date: datetime, end_date: datetime):
@@ -32,3 +33,17 @@ def get_top_suppliers(db: Session, start_date: datetime, end_date: datetime):
         .limit(5)
         .all()
     )
+
+
+def create_order(db: Session, order_data: OrderCreate):
+    new_order = Order(
+        supplier_id=order_data.supplier_id,
+        customer_id=order_data.customer_id,
+        quantity=order_data.quantity,
+        price=order_data.price,
+        order_date=order_data.order_date,
+    )
+    db.add(new_order)
+    db.commit()
+    db.refresh(new_order)
+    return new_order.orderid
