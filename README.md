@@ -6,6 +6,13 @@ A system for processing and analyzing inventory data in a warehouse. The project
 and analysis using a REST API provided via FastAPI. The system supports asynchronous data processing with Celery and
 Redis.
 
+The following effective optimizations were made when working with the database:
+- Using Bulk Inserts with SQLAlchemy
+- Using Write-Ahead Logging (WAL) for SQLite
+- Indexing for Faster Queries
+ 
+More details are provided below in the section: Database Optimization Approaches
+
 ## **Main Features**
 
 - **Fake data generation** for inventory items.
@@ -65,7 +72,6 @@ LOG_LEVEL=INFO
 DEBUG=False
 API_PREFIX=/api
 ```
-
 ---
 
 ### **3. Run the Project with Docker**
@@ -103,7 +109,6 @@ To execute tests, use the command:
 ```bash
 pytest -v
 ```
-
 ---
 
 ## **Database Optimization Approaches**
@@ -265,7 +270,7 @@ Logging can be configured in `config.py` using **Loguru**.
 
 ## **Conclusion**
 
-This project implements a system for processing and analyzing inventory data in a warehouse using **FastAPI, Celery, and
+This project effectively implements a system for processing and analyzing inventory data in a warehouse using **FastAPI, Celery, and
 Redis**.
 
  **All data is automatically generated and stored in a SQLite database.**  
