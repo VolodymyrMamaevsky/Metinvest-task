@@ -19,10 +19,18 @@ Redis.
 
 ### **1. Install Dependencies**
 
-To install all project dependencies, use Poetry (if Poetry is not installed, install it using the command below):
+Swagger UI will be available at: http://localhost:8000/docs
+
+To install all project dependencies, use Poetry (if Poetry is not installed, guide below):
 
 ```bash
-curl -sSL https://install.python-poetry.org | python3 -
+https://python-poetry.org/docs/
+```
+
+Create a virtual environment:
+
+```bash
+python -m venv .venv
 ```
 
 Now, install all dependencies:
@@ -39,12 +47,15 @@ In the project root, create a `.env` file and add the following environment vari
 
 ```env
 DATABASE_URL=sqlite:///./test.db
-REDIS_URL=redis://localhost:6379/0
-CELERY_BROKER_URL=redis://localhost:6379/0
-CELERY_RESULT_BACKEND=redis://localhost:6379/0
-LOG_LEVEL=INFO
+REDIS_URL=redis://redis:6379
 HOST=0.0.0.0
 PORT=8000
+CELERY_BROKER_URL=redis://redis:6379/0
+CELERY_RESULT_BACKEND=redis://redis:6379/0
+CELERY_BROKER_CONNECTION_RETRY_ON_STARTUP=True
+LOG_LEVEL=INFO
+DEBUG=False
+API_PREFIX=/api
 ```
 
 ---
