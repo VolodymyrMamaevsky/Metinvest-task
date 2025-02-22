@@ -118,32 +118,32 @@ pytest -v
 This project implements several key approaches to optimize database performance, enhancing efficiency and reducing
 response times when handling large volumes of data.
 
-### **1. Using Bulk Inserts with SQLAlchemy**
+#### **1. Using Bulk Inserts with SQLAlchemy**
 
 To speed up data insertion operations, the project utilizes the `bulk_save_objects` method from SQLAlchemy. This method
 allows multiple records to be inserted in a single query, significantly reducing overhead compared to inserting
 individual records one by one.
 
-📌 **Key Benefits:**
+📌 *Key Benefits:*
 
 - **Reduced overhead** for multiple insert operations.
 - **Faster data processing**, especially for generating large amounts of fake data (e.g., 10,000 orders).
 
-### **2. Using Write-Ahead Logging (WAL) for SQLite**
+#### **2. Using Write-Ahead Logging (WAL) for SQLite**
 
 The project enables **Write-Ahead Logging (WAL) mode** in SQLite to improve query parallelism. Instead of writing
 changes directly to the main database file, SQLite stores them in a separate log file, improving performance.
 
-📌 **Key Benefits:**
+📌 *Key Benefits:*
 
 - **Faster write and read operations**, especially when multiple transactions are executed simultaneously.
 - **Better concurrency**, making it easier to handle high workloads.
 
-### **3. Indexing for Faster Queries**
+#### **3. Indexing for Faster Queries**
 
 The database uses indexes on frequently queried and filtered fields to improve performance.
 
-📌 **Example Indexed Fields:**
+📌 *Example Indexed Fields:*
 
 - `supplier_id`, `customer_id`, and `order_date` are indexed to speed up queries such as:
     - Retrieving the **top 5 suppliers** by order count.
@@ -153,23 +153,23 @@ The database uses indexes on frequently queried and filtered fields to improve p
 Indexes significantly reduce query execution time for large datasets by providing quick access to rows based on indexed
 column values.
 
-### **4. Parallel Asynchronous Data Processing with Celery**
+#### **4. Parallel Asynchronous Data Processing with Celery**
 
 For **asynchronous task processing**, such as updating statistics or creating orders, **Celery** is used with **Redis**
 as a message broker.
 
-📌 **Key Benefits:**
+📌 *Key Benefits:*
 
 - **Offloads heavy data processing** from the main application thread.
 - **Improves overall performance** and responsiveness.
 - **Handles background tasks efficiently**, ensuring smooth user experience even under high load.
 
-### **5. Optimized Database Connections**
+#### **5. Optimized Database Connections**
 
 To efficiently manage database connections, the project utilizes **SQLAlchemy’s connection pooling**. This reduces the
 overhead of establishing a new database connection for each query, improving performance.
 
-📌 **Key Benefits:**
+📌 *Key Benefits:*
 
 - **Minimizes connection overhead**, reducing latency.
 - **Ensures efficient resource utilization**, especially under high request loads.
