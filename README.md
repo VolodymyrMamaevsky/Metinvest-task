@@ -304,11 +304,9 @@ Logging can be configured in `config.py` using **Loguru**.
 
 ## **Conclusion**
 
-This project effectively implements a system for processing and analyzing inventory data in a warehouse using **FastAPI, Celery, and
-Redis**.
+This project effectively implements a system for processing and analyzing inventory data in a warehouse using FastAPI, Celery, and
+Redis.
 
- **All data is automatically generated and stored in a SQLite database.**  
- **You can interact with the system via a REST API.**  
- **Celery handles asynchronous task processing efficiently.**  
+**I hope you will appreciate my efforts. I’d be happy to receive feedback** 😎
 
 
