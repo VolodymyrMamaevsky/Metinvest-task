@@ -27,10 +27,11 @@ To install all project dependencies, use Poetry (if Poetry is not installed, gui
 https://python-poetry.org/docs/
 ```
 
-Create a virtual environment:
+Create and activate virtual environment (below example for Windows):
 
 ```bash
 python -m venv .venv
+.\.venv\Scripts\activate
 ```
 
 Now, install all dependencies:
