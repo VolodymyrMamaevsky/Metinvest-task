@@ -20,6 +20,7 @@ Redis.
 ### **1. Install Dependencies**
 
 Swagger UI will be available at: http://localhost:8000/docs
+
 Command execution examples in this guide for Windows
 
 To install all project dependencies, use Poetry (if Poetry is not installed, guide below):
