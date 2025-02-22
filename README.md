@@ -177,16 +177,17 @@ overhead of establishing a new database connection for each query, improving per
 ---
 
 ## **API Endpoints**
+- You can use Postman to make requests
 
 ### **1. Get Total Expenses for Inventory Over a Period**
 
 - **Method:** `GET`
 - **URL:** `/total_spent`
 
-#### **Example Request:**
+#### **Example GET Request:**
 
 ```bash
-GET /total_spent?start_date=2025-01-01&end_date=2025-01-31
+http://localhost:8000/total_spent?start_date=2025-01-01&end_date=2025-01-31
 ```
 
 #### **Example Response:**
@@ -204,10 +205,10 @@ GET /total_spent?start_date=2025-01-01&end_date=2025-01-31
 - **Method:** `GET`
 - **URL:** `/top_products`
 
-#### **Example Request:**
+#### **Example Get Request:**
 
 ```bash
-GET /top_products?start_date=2025-01-01&end_date=2025-01-31
+http://localhost:8000/top_products?start_date=2025-01-01&end_date=2025-01-31
 ```
 
 #### **Example Response:**
@@ -256,6 +257,37 @@ GET /top_products?start_date=2025-01-01&end_date=2025-01-31
       "total_quantity": 50
     }
   ]
+}
+```
+### **3. Add a New Order for Inventory**
+
+- **Method:** `POST`
+- **URL:** `/create_order`
+
+#### **Example POST Request:**
+
+```bash
+http://localhost:8000/create_order
+```
+
+#### **Request Body (JSON):**
+
+```json
+{
+  "supplier_id": 1,
+  "customer_id": 2,
+  "quantity": 100,
+  "price": 150.75,
+  "order_date": "2025-01-15"
+}
+```
+
+#### **Example Response:**
+
+```json
+{
+  "message": "Order added to queue",
+  "order_id": 12345
 }
 ```
 
