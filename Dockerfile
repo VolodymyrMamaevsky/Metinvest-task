@@ -15,5 +15,5 @@ COPY . /app/
 # Set environment variables for FastAPI and Celery
 ENV PYTHONUNBUFFERED 1
 
-# Start the application
-CMD ["sh", "-c", "python -m app.models.generate_fake_data && uvicorn app.main:app --host 0.0.0.0 --port 8000"]
+# Start the application (without generating fake data on startup)
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
