@@ -6,14 +6,14 @@ A system for processing and analyzing inventory data in a warehouse. The project
 and analysis using a REST API provided via FastAPI. The system supports asynchronous data processing with Celery and
 Redis.
 
-Technology stack: FastAPI, SQLite, Celery, Redis, Pydantic, SQLAlchemy, Docker
+Technology stack: FastAPI, SQLite, Celery, Redis, Pydantic, SQLAlchemy, Docker.
 
 The following effective optimizations were made when working with the database:
 - Using Bulk Inserts with SQLAlchemy
 - Using Write-Ahead Logging (WAL) for SQLite
 - Indexing for Faster Queries
  
-More details are provided below in the section: Database Optimization Approaches
+More details are provided below in the section: Database Optimization Approaches.
 
 ## **Main Features**
 
