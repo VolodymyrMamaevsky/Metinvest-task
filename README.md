@@ -280,6 +280,8 @@ Logging can be configured in `config.py` using **Loguru**.
 This project effectively implements a system for processing and analyzing inventory data in a warehouse using FastAPI, Celery, and
 Redis.
 
-**I hope you will appreciate my efforts. I’d be happy to receive feedback** 😎
+**I hope you will appreciate my efforts** 
+
+**I’d be happy to receive feedback** 😎
 
 
