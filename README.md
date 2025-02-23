@@ -152,7 +152,7 @@ overhead of establishing a new database connection for each query, improving per
 ---
 
 ## **API Endpoints**
-- You can use Postman to make requests
+- You can use Postman or Swagger to make requests
 
 ### **1. Get Total Expenses for Inventory Over a Period**
 
@@ -242,7 +242,7 @@ http://localhost:8000/top_products?start_date=2025-01-01&end_date=2025-01-31
 #### **Example POST Request:**
 
 ```bash
-http://localhost:8000/create_order
+http://localhost:8000/docs#/default/create_order_endpoint_create_order_post
 ```
 
 #### **Request Body (JSON):**
