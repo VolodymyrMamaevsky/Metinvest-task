@@ -6,6 +6,8 @@ A system for processing and analyzing inventory data in a warehouse. The project
 and analysis using a REST API provided via FastAPI. The system supports asynchronous data processing with Celery and
 Redis.
 
+Technology stack: FastAPI, SQLite, Celery, Redis, Pydantic, SQLAlchemy, Docker
+
 The following effective optimizations were made when working with the database:
 - Using Bulk Inserts with SQLAlchemy
 - Using Write-Ahead Logging (WAL) for SQLite
@@ -35,27 +37,6 @@ Clone the repository:
 ```bash
 https://github.com/VolodymyrMamaevsky/Metinvest-task.git
 ```
-To install all project dependencies, use Poetry (if Poetry is not installed, guide below):
-
-```bash
-https://python-poetry.org/docs/
-```
-
-Create and activate virtual environment:
-
-```bash
-python -m venv .venv
-```
-```bash
-.\.venv\Scripts\activate
-```
-
-Now, install all dependencies:
-
-```bash
-poetry install
-```
-
 ---
 
 ### **2. Create a `.env` File**
@@ -94,13 +75,7 @@ This will create all necessary containers:
 
 ### **4. Generate Fake Data**
 
-To generate fake inventory data in the database, run:
-
-```bash
-poetry run python -m app.models.generate_fake_data
-```
-
-This will create **10,000 records** in the database.
+10,000 fake data records will be created in the DB automatically when the Docker is started
 
 ---
 
@@ -109,7 +84,7 @@ This will create **10,000 records** in the database.
 To execute tests, use the command:
 
 ```bash
-pytest -v
+docker-compose run app pytest -v
 ```
 ---
 
