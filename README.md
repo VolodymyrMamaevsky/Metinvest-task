@@ -17,10 +17,10 @@ More details are provided below in the section: Database Optimization Approaches
 
 ## **Main Features**
 
-- **Fake data generation** for inventory items.
-- **API for retrieving expense information** and **popular products**.
-- **Asynchronous request processing** with Celery.
-- **Logging and monitoring** via Loguru.
+- **Fake data generation for inventory items**
+- **API for retrieving expense information and popular products**
+- **Asynchronous request processing with Celery**
+- **Logging and monitoring via Loguru**
 
 ---
 
