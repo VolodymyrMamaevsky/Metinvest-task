@@ -7,6 +7,13 @@ fake = Faker()
 
 def generate_fake_orders(num_orders: int):
     db = SessionLocal()
+
+    current_count = db.query(Order).count()
+    if current_count >= num_orders:
+        print(f"Database already contains {current_count} orders. Skipping generation.")
+        db.close()
+        return
+
     orders = []
     for _ in range(num_orders):
         order = Order(
@@ -21,6 +28,3 @@ def generate_fake_orders(num_orders: int):
     db.bulk_save_objects(orders)
     db.commit()
     db.close()
-
-
-generate_fake_orders(10000)  # Generation of 10,000 orders
