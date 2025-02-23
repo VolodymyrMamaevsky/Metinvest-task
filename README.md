@@ -26,20 +26,18 @@ More details are provided below in the section: Database Optimization Approaches
 
 ## **Installation and Setup**
 
-### **1. Install Dependencies**
-
-Swagger UI will be available at: http://localhost:8000/docs
-
-Command execution examples in this guide for Windows
-
-Clone the repository:
+### **1. Clone the repository**
 
 ```bash
 https://github.com/VolodymyrMamaevsky/Metinvest-task.git
 ```
+Swagger UI will be available at: http://localhost:8000/docs
+
+Command execution examples in this guide for Windows
+
 ---
 
-### **2. Create a `.env` File**
+### **2. Create `.env` file**
 
 In the project root, create a `.env` file and add the following environment variables:
 
